@@ -9,7 +9,9 @@ export default class Todos extends Component{
         }
     }
     // CRUD
-
+    delete = (index) =>{
+       console.log(index)
+    }
     render(){
         const btn={
         width:"250px",
@@ -36,9 +38,7 @@ export default class Todos extends Component{
                                 this.setState({todos:copy})
                                 }}>Done</button>
                         <button style={btn} onClick={()=>{
-                            const copyTodos =[...this.state.todos]
-                            copyTodos.splice(index,1)
-                            this.setState({todos:copyTodos})
+                            this.deleteBtn(index)
                         }}>X</button>
                         </li>)
                     })
